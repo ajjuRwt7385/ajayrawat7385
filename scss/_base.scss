@@ -1,0 +1,40 @@
+html,body{
+    margin:0;
+    padding:0;
+    width:100%;
+    height: 100%;
+}
+body{    
+    font-family: 'PT Sans', sans-serif;
+    background-color: $bodyBase;
+    font-size: 16px;
+    
+    &::before{
+        height: 125vh;
+        // background-color: $bodyBg;
+        position: fixed;
+        bottom:auto;
+        left:-10%;
+        right: auto;
+        top: auto;
+        width:125%;
+        content: '';
+        min-height: 400px;
+        background-image: linear-gradient(to right top, #6d327c, #485DA6, #00a1ba, #00BF98, #36C486);
+        opacity: 0.25;
+    }
+    &.rotate{
+        &::before{
+            transform: rotate(45deg);
+        }
+    }
+}
+h1{
+    font-size: 3rem;
+    font-family: 'Monoton', cursive;
+}
+h2{
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+    margin-top:1.5em;
+}

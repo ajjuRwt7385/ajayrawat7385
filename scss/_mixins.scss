@@ -1,0 +1,32 @@
+@mixin mq($size) {
+    @media only screen and (min-width: $size) {
+        @content;
+    }
+}
+
+/*
+body{
+    color: red;
+    
+    @include mq(767px) {    
+        color: red;
+    }
+}
+*/
+
+@mixin uc {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+/*
+.title {
+    @include uc;
+}
+
+*/
+
+@mixin skillWidth($level) {
+   width: unquote(($level * 100/5)+'%');
+}
+
