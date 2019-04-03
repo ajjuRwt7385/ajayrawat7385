@@ -1,8 +1,60 @@
-.home{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
+.home {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  color: white;
+  padding: 40px;
+  .profile-img {
+    box-shadow: 1px 10px 8px rgba(0, 115, 207, 0.1);
+    border-radius: 100%;
+    overflow: hidden;
+    border: 4px solid white;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .title {
+    text-shadow: 1px 4px 8px rgba(0, 115, 207, 0.2);
+    font-weight: 500;
+    text-align: center;
+  }
+}
+
+.social-links {
+  display: flex;
+  justify-content: space-evenly;
+  a {
+    color: white;
+    font-size: 36px;    
     position: relative;
+    .icon{
+        transition: all 0.2s ease;
+    }
+    span{
+        position: absolute;
+        bottom:-10px;
+        left: 50%;
+        right: auto;
+        font-size: 12px;
+        transform: translateX(-50%);
+    }
+    &:hover{
+        .icon{
+            transform: scale(1.1);
+        }
+       span{
+           opacity:1;
+       }
+    }
+    img {
+      width: 48px;
+      height: 48px;
+    }
+  }
 }

@@ -1,5 +1,9 @@
 .header {
-  padding: 40px;
+  // padding: 40px 0;
+  a,
+  a:hover {
+    text-decoration: none;
+  }
   .title {
     color: white;
     // font-weight: bold;
@@ -11,92 +15,118 @@
     margin: 0;
     padding: 0;
     li {
-      color: #4b6071;
+      color: white;
       display: flex;
       margin: 10px 0;
       align-items: center;
       font-weight: 300;
       i {
         margin-right: 10px;
+        color: #df7100;
       }
     }
   }
   .profession {
     font-size: 2rem;
     margin-bottom: 1.5rem;
+    span {
+      color: $skillLevelColor;
+      text-shadow: 1px 4px 8px rgba(0, 0, 0, 0.2);
+    }
   }
 }
-.section{
+.section {
   padding: 40px;
 }
 .employment-history {
   .company {
     margin: 0 0 60px 0;
-    ul{
-      margin:0;
+    ul {
+      margin: 0;
     }
   }
 }
 .section-title {
-  &.history{
-    display: flex;  
-    justify-content: space-between;
+  &.history {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-bottom:1.5rem;
+    @media (min-width: 768px) {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
   }
   h5 {
-    color: $sectionTitleColor; 
+    color: $sectionTitleColor;
   }
   .duration {
     color: $sectionSubTitleColor;
-    width: 200px;
+    width: 210px;
     margin-left: 40px;
     text-align: right;
     position: relative;
   }
-  .link{
+  .link {
     margin: 10px 0 20px;
-    a{
+
+    a {
       color: $linkColor;
+
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      display: block;
     }
   }
 }
 
-.professioal-experience{
-  .company{
+.professioal-experience {
+  .company {
     margin: 0 0 60px 0;
-    ul{
-      margin:0;
+    ul {
+      margin: 0;
       padding: 0;
     }
-    li{
-      margin:0;
+    li {
+      margin: 0;
       list-style: none;
-      span{
+      display: flex;
+      margin-bottom: 10px;
+      flex-direction: column;
+      span {
         font-weight: bold;
-        width: 200px;
-        display: inline-block;
+        min-width: 200px;
+        display: inline-block;       
+      }
+      @media (min-width: 768px) {
+        flex-direction: row;
       }
     }
   }
 }
 
-.sidebar{
-  color: white;
-  ul{
-    margin:0;
-    padding:0;
+.sidebar {
+  // color: white;
+  h2 {
+    color: white;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
     list-style: none;
   }
-  &::before{
-    content:'';
+  &::before {
+    content: "";
     background-color: $sidebarBg;
     position: absolute;
-    right:0;
-    top:0;
-    width:100%;
+    right: 0;
+    top: 0;
+    width: 100%;
     height: 100%;
   }
-  .skills{    
-    .bar{
+  .skills {
+    .bar {
       position: relative;
       width: 100%;
       min-height: 10px;
@@ -105,58 +135,58 @@
       display: inline-block;
       // color: white;
       // overflow: hidden;
-      
+
       &::after,
-      &::before{
-        content: '';
+      &::before {
+        content: "";
         display: block;
         position: absolute;
-        height:100%;
-        left:0;
-        top:100%;
-        margin-top:10px;
+        height: 100%;
+        left: 0;
+        top: 100%;
+        margin-top: 10px;
         background-color: $skillLevelColor;
         border-radius: 20px;
-        height:10px
+        height: 10px;
       }
-      &::before{
+      &::before {
         background-color: $skillBaseColor;
-        width:100%;
-        box-shadow: 10px 10px 14px 1px rgba(00,00,00,0.2);
+        width: 100%;
+        box-shadow: 10px 10px 14px 1px rgba(00, 00, 00, 0.2);
       }
-      &.level-5{
-        &::after{
+      &.level-5 {
+        &::after {
           @include skillWidth(5);
         }
       }
-      &.level-4{
-        &::after{
+      &.level-4 {
+        &::after {
           @include skillWidth(4);
         }
       }
-      &.level-3{
-        &::after{
+      &.level-3 {
+        &::after {
           @include skillWidth(3);
         }
       }
-      &.level-2{
-        &::after{
+      &.level-2 {
+        &::after {
           @include skillWidth(2);
         }
       }
-      &.level-1{
-        &::after{
+      &.level-1 {
+        &::after {
           @include skillWidth(1);
         }
       }
     }
   }
 
-  .education{
-    ul{
-      li{
+  .education {
+    ul {
+      li {
         margin-bottom: 20px;
-        >div{
+        > div {
           font-weight: bold;
           font-size: 1.2em;
         }
@@ -164,35 +194,35 @@
     }
   }
 
-  .certification-courses{
-    li{
-      margin-bottom:40px;
-      >div{
+  .certification-courses {
+    li {
+      margin-bottom: 40px;
+      > div {
         display: flex;
-        div.img{
+        div.img {
           width: 80px;
           height: 80px;
           min-width: 80px;
           border-radius: 8px;
           overflow: hidden;
-          margin-right:10px;
-          img{
-            width:100%;
+          margin-right: 10px;
+          img {
+            width: 100%;
           }
         }
-        div.title{
-          h5{
-          font-size: 1.1rem;
+        div.title {
+          h5 {
+            font-size: 1.1rem;
           }
-          >div{
+          > div {
             display: flex;
-            >span:first-child{
-              width:80px;
+            > span:first-child {
+              width: 80px;
             }
           }
         }
-        >span{
-          width:100px;
+        > span {
+          width: 100px;
           display: inline-block;
         }
       }
@@ -200,3 +230,16 @@
   }
 }
 
+h2 {
+  i.material-icons {
+    border-radius: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: $iconCircleCol;
+    color: white;
+    margin-right: 10px;
+  }
+}
